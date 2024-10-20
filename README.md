@@ -39,6 +39,7 @@ urlpatterns = [
 ]
 ```
 ------------------------------------------------
+------------------------------------------------
 # Rendering Templates
 ## Setting.py
 ```python
@@ -69,6 +70,7 @@ def about(request):
     return render(request, 'about.html')
 ```
 ----------------------------------------
+----------------------------------------
 # Linking Static Files
 ## Setting.py
 ```python
@@ -93,6 +95,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 </body>
 </html>
 ```
+----------------------------------------
 ----------------------------------------
 # File Organization in Django
 ```bash
@@ -121,5 +124,6 @@ my_project/
 │   └── files/
 └── static/
 ```
+------------------------------------------
 ------------------------------------------
 
