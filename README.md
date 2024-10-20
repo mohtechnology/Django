@@ -1,10 +1,9 @@
 # Django
-
-## Create Django App
+# Create Django App
 ```bash
 django-admin startproject PROJECT_NAME
 ```
-## Run Server
+# Run Server
 ```bash
 python manage.py runserver
 ```
@@ -28,7 +27,6 @@ def about(request):
 
 ## Urls.py
 ```python
-# Some editional Comments
 from django.contrib import admin
 from django.urls import path
 from . import views
@@ -40,3 +38,73 @@ urlpatterns = [
 ]
 ```
 ------------------------------------------------
+# Rendering Templates
+## Setting.py
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+## Urls.py
+```bash
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name="home"),
+    path('about/', views.about),
+]
+```
+## Views.py
+```bash
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
+```
+
+----------------------------------------
+# File Organization in Django
+```bash
+my_project/
+├── manage.py
+├── my_project/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+├── file_manager/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations/
+│   ├── models.py
+│   ├── templates/
+│   │   └── file_manager/
+│   │       ├── upload.html
+│   │       └── file_list.html
+│   ├── urls.py
+│   ├── views.py
+├── media/
+│   └── files/
+└── static/
+```
