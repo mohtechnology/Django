@@ -28,6 +28,7 @@ def about(request):
 
 ## Urls.py
 ```python
+# Some editional Comments
 from django.contrib import admin
 from django.urls import path
 from . import views
