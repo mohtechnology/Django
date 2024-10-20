@@ -44,7 +44,7 @@ urlpatterns = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates'], # Adding Templates Folder Here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,18 +57,6 @@ TEMPLATES = [
     },
 ]
 ```
-## Urls.py
-```bash
-from django.contrib import admin
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
-    path('about/', views.about),
-]
-```
 ## Views.py
 ```bash
 from django.shortcuts import render
@@ -79,7 +67,31 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 ```
+----------------------------------------
+# Linking Static Files
+## Setting.py
+```python
+import os
 
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+```
+## index.html
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
+```
 ----------------------------------------
 # File Organization in Django
 ```bash
@@ -108,3 +120,5 @@ my_project/
 │   └── files/
 └── static/
 ```
+------------------------------------------
+
