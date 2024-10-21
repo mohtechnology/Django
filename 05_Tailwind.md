@@ -110,6 +110,18 @@ python manage.py tailwind start
 # TailWind Reload
 ### Settings.py
 ```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'registration',
+    'tailwind',
+    'theme',
+    'django_browser_relaod',
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
