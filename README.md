@@ -149,6 +149,64 @@ def FUNCTION_NAME(request):
 
 ----------------------------------------
 ----------------------------------------
+# TailWind (Node.js Needed)
+### Installing TailWind
+```bash
+pip install django-tailwind
+```
+### Installing TailWind Reload
+```bash
+pip install 'django-tailwind[reload]'
+```
+## Setup
+### Settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'registration',
+    'tailwind'
+]
+```
+## Starting TailWind
+```bash
+python .\manage.py tailwind init
+```
+ [1/1] app_name (theme): 
+#### Enter tailwind app name(default ='theme')
+### Settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'registration',
+    'tailwind',
+    'theme',
+]
+
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ['127.0.0.1']
+NPM_BIN_PATH = 'C:\\Program Files\\nodejs\\npm.cmd'
+```
+## Installing Tailwind CSS
+```bash
+python manage.py tailwind install
+```
+## Starting TailWind
+* Open Another Terminal
+```bash
+python manage.py tailwind start
+```
+----------------------------------------
+----------------------------------------
 # File Organization in Django
 ```bash
 my_project/
