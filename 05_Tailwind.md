@@ -28,6 +28,10 @@ python .\manage.py tailwind init
 ```
  [1/1] app_name (theme): 
 #### Enter tailwind app name(default ='theme')
+## Finding Node.js Path
+```bash
+where npm
+```
 ### Settings.py
 ```python
 INSTALLED_APPS = [
