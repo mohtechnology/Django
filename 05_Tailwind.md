@@ -124,7 +124,7 @@ INSTALLED_APPS = [
     'registration',
     'tailwind',
     'theme',
-    'django_browser_relaod',
+    'django_browser_reload',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
