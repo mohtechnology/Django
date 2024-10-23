@@ -63,3 +63,26 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+## Showing Data According to the column
+### Models.py
+```python
+from django.db import models
+from django.utils import timezone
+
+# Create your models here.
+class students(models.Model):
+    BRANCH_CHOICE = [
+        ('CS', 'Computer Science'),
+        ('AI', 'Artificial Intelligence'),
+        ('DS', 'Data Science'),
+    ]
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/')
+    data_time = models.DateTimeField(default= timezone.now)
+    branch = models.CharField(max_length=2, choices=BRANCH_CHOICE)
+
+    def __str__(self):
+        return self.name
+```
+
+
