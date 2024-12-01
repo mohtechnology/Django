@@ -69,19 +69,21 @@ python manage.py runserver
 ### Models.py
 ```python
 from django.db import models
-from django.utils import timezone
 
 # Create your models here.
-class students(models.Model):
-    BRANCH_CHOICE = [
-        ('CS', 'Computer Science'),
-        ('AI', 'Artificial Intelligence'),
-        ('DS', 'Data Science'),
-    ]
+class Student(models.Model):
+    BRANCH_CHOICE = {
+        "CS": "Computer Science",
+        "AI": "Artificial Intelligence",
+        "DS": "Data Science",
+        "IT": "Information Technology",
+    }
     name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=250)
+    age = models.IntegerField()
     image = models.ImageField(upload_to='images/')
-    data_time = models.DateTimeField(default= timezone.now)
-    branch = models.CharField(max_length=2, choices=BRANCH_CHOICE)
+    branch = models.CharField(max_length=20, choices=BRANCH_CHOICE)
+    date_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
